@@ -1,24 +1,22 @@
-# Ex.No:4(D) FINAL & STATIC IN JAVA
+# Ex.No:4(C)    CONSTRUCTOR CHAINING(SUPER KEYWORD)
 
 ## AIM:
-   To create a Java program to perform final & static keyword for below situation Employee object contains member 'Emp_Id'. It contains object named name, which contains its own informations such as Fname, Mname, Lname.
- 
+To Create a Java program to implement super keyword in constructor.
+
 ## ALGORITHM :
-1.	Start the Program.
-2.	Define class `Name`:
--	a) Declare three `String` variables: `Fname`, `Mname`, and `Lname`
--	b) Define method `dispName(String fn, String mn, String ln)`:
--	i) Print the full name using the passed parameters `fn`, `mn`, and `ln`
-3.	Define class `Employee`:
--	a) Declare an integer variable `Emp_Id`
--	b) Create an instance of `Name` called `obj`
--	c) Define method `disp(int id)`:
--	i) Print the employee ID
--	ii) Create a new `Name` object and call `dispName("B", "Leo", "John")` to display the name
+1.  Start the Program.
+2.	Define class `College`:
+-	a) Define method `display()` that prints "I am a Vehicle"
+3.	Define class `Student` that extends `College`:
+-	a) Override method `display()` to print "I am a Car"
+-	b) Define method `print()`:
+-	i) Call `super.display()` to invoke `display()` from `College` class
+-	ii) Call `this.display()` to invoke `display()` from `Student` class
 4.	Define `Main` class with `main` method:
--	a) Create an `Employee` object `emp`
--	b) Call `emp.disp(101)` to display the employee details
+-	a) Create a `Student` object `sc`
+-	b) Call `sc.print()` to execute the `print()` method
 5.	End
+
 
 
 
@@ -28,23 +26,46 @@
 ## PROGRAM:
  ```
 /*
-Program to implement a final & Static using Java
-Developed by: 
-RegisterNumber:  
+Program to implement a Constructor Chaining using Java
+Developed by: MONISH R
+Registeration Number : 212223220061 
 */
 ```
 
 ## Sourcecode.java:
+```java
+// Base class Vehicle
+class Vehicle {
+    // Constructor for Vehicle
+    Vehicle() {
+        System.out.println("I am a Vehicle");
+    }
+}
 
+// Derived class Car that extends Vehicle
+class Car extends Vehicle {
+    // Constructor for Car
+    Car() {
+        // Call the constructor of Vehicle
+        super();
+        System.out.println("I am a Car");
+    }
+}
 
-
-
-
-
-
+// Main class to test the implementation
+public class Main {
+    public static void main(String[] args) {
+        // Create an instance of Car
+        Car car = new Car();
+    }
+}
+```
 ## OUTPUT:
 
+<img width="499" height="196" alt="Screenshot 2025-10-09 213540" src="https://github.com/user-attachments/assets/ddba4f95-24a9-4f84-9e71-4cbc54283901" />
 
 
 ## RESULT:
-Thus, the java program to perform final & static keyword was executed successfully.
+Thus the java program for constructor chaining was executed successfully.
+
+
